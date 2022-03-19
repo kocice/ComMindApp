@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ComMindApp';
+  currentId = 1;
+
+  changeId(id: number) {
+    this.currentId = id;
+  }
 }

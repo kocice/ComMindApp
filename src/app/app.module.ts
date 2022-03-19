@@ -2,13 +2,35 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ProductComponent } from './components/product/product.component';
+import { ProductInfoComponent } from './components/product-info/product-info.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FormsModule } from "@angular/forms";
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import {ProductDataService} from "./variables/product-data.service";
+import {HttpClientModule, HttpClientXsrfModule} from "@angular/common/http";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductComponent,
+    ProductInfoComponent,
+    NavbarComponent,
+    StarRatingComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    MatGridListModule,
+    MatCardModule,
+    MatButtonModule,
+    // HttpClientXsrfModule.withOptions({
+    //   cookieName: 'csrftoken'
+    // }),
   ],
   providers: [],
   bootstrap: [AppComponent]

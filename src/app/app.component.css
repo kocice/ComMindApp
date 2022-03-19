@@ -1,0 +1,24 @@
+.container-grille {
+  height: calc(100vh - 38px);
+  width: 95%;
+  margin: 0 auto;
+  max-width: 1400px;
+  display: grid;
+  /*grid-template-columns: 60% 40%;*/
+  grid-template-columns: 60% 40%;
+}
+
+@media screen and (max-width: 775px) {
+
+  .container-grille {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+
+  .container-grille {
+    grid-template-columns: 60% 40%;
+  }
+}
+

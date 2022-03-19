@@ -1,0 +1,44 @@
+<aside class="sticky">
+<!--  <div class="alert alert-info" role="alert">-->
+<!--    Ce produit à <span class="badge bg-secondary">{{ remarks.length }}</span> commentaires-->
+<!--  </div>-->
+  <div style="width:100%;">
+   <canvas id="myChart" width="500" height="200" #mychart></canvas>
+  </div>
+  <div>
+    <table class="table table-dark table-hover mt-2">
+      <thead>
+        <tr>
+          <th scope="col">Variable</th>
+          <th scope="col">Moyenne</th>
+          <th scope="col">Min</th>
+          <th scope="col">Max</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Polarity</th>
+          <td>{{ getMean(polarity) }}</td>
+          <td>{{ getMin(polarity) }}</td>
+          <td>{{ getMax(polarity) }}</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Subjectivity</th>
+          <td>{{ getMean(subjectivity) }}</td>
+          <td>{{ getMin(subjectivity) }}</td>
+          <td>{{ getMax(subjectivity) }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="alert alert-secondary" role="alert">
+      Ce produit contient {{ polarity.length }} commentaires
+    </div>
+<!--    <div class="alert alert-secondary" role="alert">-->
+<!--      Ce produit contient {{ countTopic }} commentaires-->
+<!--    </div>-->
+  </div>
+  <div style="width:100%;">
+   <canvas id="myPie" width="500" height="200" #mypie></canvas>
+  </div>
+</aside>

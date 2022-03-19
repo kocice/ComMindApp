@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="alert alert-primary mt-3 col-md-8" *ngIf="!!receivedRating">
+    La note est de {{ receivedRating }}
+  </div>
+
+  <div class="product">
+
+    <div class="row filtre">
+      <div class="col-md-3">
+        <span>Filtre actuel: </span>
+        <b>{{ productFilter }}</b>
+      </div>
+      <div class="col-md-5">
+        <input type="text" class="form-control" [(ngModel)]="productFilter">
+      </div>
+    </div>
+
+    <div class="carte" *ngFor="let product of filteredProducts">
+      <div (click)="sendId(product.id); status=!status">
+        <img [src]="product.image_url" [title]="product.title" [alt]="product.title">
+        <h5>{{ product.title | titlecase }}</h5>
+        <app-star-rating [rating]="product.product_rating"
+        (starRatingClicked)="receiveRatingClicked($event)">
+        </app-star-rating>
+        <a target="_blank" [href]="product.product_url" class="btn btn-info">Acheter</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
