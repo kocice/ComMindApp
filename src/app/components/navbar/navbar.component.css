@@ -1,1 +1,51 @@
+.navbar {
+  padding: 0;
+}
+#menu {
+  height: 50px;
+}
+
+#menu a {
+  font-family: 'Sacramento', cursive;
+  font-size: 40px;
+  /*color: var(--bleu-ps);*/
+  font-weight: bold;
+}
+
+#search-input {
+  width: 300px;
+  border-radius: 15px;
+  font-size: 12px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0 3px 10px;
+  margin: 5px 1px 3px 0;
+  border: 1px solid #DDDDDD;
+}
+
+#search-input:focus, textarea:focus {
+  box-shadow: 0 0 5px rgb(59, 227, 246);
+  padding: 3px 0 3px 5px;
+  margin: 5px 1px 3px 0;
+  border: 1px solid rgb(59, 227, 246);
+}
+
+hr {
+  border: 1px solid var(--border-color);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-info {
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--bleu-ps);
+  border-radius: 10px;
+}
+.nav-info i {
+  color: var(--border-color);
+}
 

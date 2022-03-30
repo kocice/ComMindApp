@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input, SimpleChanges} from '@angular/core';
 import {IProduct} from '../../variables/product-data';
 import {ProductDataService} from "../../variables/product-data.service";
 
@@ -16,14 +16,11 @@ export class ProductComponent implements OnInit {
 
   public filteredProducts: IProduct[] = [];
   public receivedRating: string | undefined;
-  status: boolean = false;
+  // status: boolean = false;
+  @Input() keyword: string = '';
 
 
   constructor(public productDataService: ProductDataService) { }
-
-  sendId(value: number) {
-    this.currentID.emit(value);
-  }
 
   ngOnInit(): void {
     this.productDataService.getProductData().subscribe({
@@ -34,6 +31,18 @@ export class ProductComponent implements OnInit {
       error: err => this.errMsg = err
     });
     this.productFilter = '';
+  }
+
+  setTitle(value: string) {
+    this.productDataService.productTitle = value
+  }
+
+  sendId(value: number) {
+    this.currentID.emit(value);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.productFilter = this.keyword
   }
 
   public get productFilter(): string {

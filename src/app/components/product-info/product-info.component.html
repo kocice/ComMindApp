@@ -1,44 +1,29 @@
 <aside class="sticky">
-<!--  <div class="alert alert-info" role="alert">-->
-<!--    Ce produit à <span class="badge bg-secondary">{{ remarks.length }}</span> commentaires-->
-<!--  </div>-->
-  <div style="width:100%;">
-   <canvas id="myChart" width="500" height="200" #mychart></canvas>
+  <div class="box">
+    {{ productDataService.productTitle }}
   </div>
-  <div>
-    <table class="table table-dark table-hover mt-2">
-      <thead>
-        <tr>
-          <th scope="col">Variable</th>
-          <th scope="col">Moyenne</th>
-          <th scope="col">Min</th>
-          <th scope="col">Max</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">Polarity</th>
-          <td>{{ getMean(polarity) }}</td>
-          <td>{{ getMin(polarity) }}</td>
-          <td>{{ getMax(polarity) }}</td>
-        </tr>
-
-        <tr>
-          <th scope="row">Subjectivity</th>
-          <td>{{ getMean(subjectivity) }}</td>
-          <td>{{ getMin(subjectivity) }}</td>
-          <td>{{ getMax(subjectivity) }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="alert alert-secondary" role="alert">
-      Ce produit contient {{ polarity.length }} commentaires
+  <div class="row">
+    <div class="col-md-6">
+      <canvas id="myChart" height="250" #mychart></canvas>
     </div>
-<!--    <div class="alert alert-secondary" role="alert">-->
-<!--      Ce produit contient {{ countTopic }} commentaires-->
-<!--    </div>-->
+    <div class="col-md-6">
+      <canvas id="myPie" height="250" #mypie></canvas>
+    </div>
   </div>
-  <div style="width:100%;">
-   <canvas id="myPie" width="500" height="200" #mypie></canvas>
+
+  <p>Ce produit contient {{ polarity.length }} commentaires</p>
+
+  <div class="data-table">
+    <button (click)="getSelectedRows()" class="btn btn-info mb-2" style="background-color: var(--bleu-ps);">Affiche le
+      commentaire</button>
+    <ag-grid-angular #agGrid
+      style="width: 100%; height: 300px;"
+      class="ag-theme-alpine"
+      rowSelection="multiple"
+      [rowData]="remarks"
+      [columnDefs]="columnDefs"
+      [pagination]="true"
+    >
+  </ag-grid-angular>
   </div>
 </aside>

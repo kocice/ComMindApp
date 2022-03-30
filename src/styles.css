@@ -3,6 +3,18 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 @import 'material-icons/iconfont/material-icons.css';
 
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+
+:root {
+  --bg-color: #F0F2F5;
+  --icon-star: gold;
+  --bleu-ps: #3be3f6;
+  --border-color: #3a3a3a;
+}
 
 *, ::before, ::after {
   box-sizing: border-box;
@@ -11,11 +23,7 @@
 }
 
 body {
-  background-color: #F0F2F5;
+  background-color: var(--bg-color);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-:root {
-  --bg-color: #F0F2F5;
-  --icon-star: gold;
-}

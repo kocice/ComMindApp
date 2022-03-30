@@ -1,8 +1,40 @@
 .sticky {
-  background: #3be3f6;
-  height: calc(100vh - 60px);
-  width: 100%;
+  background: #FFFFFF;
+  height: calc(100vh - 167px);
+  width: 90%;
   position: sticky;
-  top: 58px;
+  top: 150px;
+  margin: 0 auto;
   overflow: auto;
+}
+
+aside p {
+  margin: 5px auto;
+  text-align: center;
+  color: var(--border-color);
+  /*font-weight: bold;*/
+}
+
+.box {
+  width: 400px;
+  margin: 5px auto;
+  font-size: 16px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  resize: horizontal;
+  font-weight: bold;
+}
+
+.data-table {
+  width: 95%;
+  margin: 5px auto;
+}
+
+.table-text {
+  line-height: 18px;
+  max-height: calc(18px * 3);
+  overflow: hidden;
+  resize: vertical;
 }

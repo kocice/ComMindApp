@@ -1,34 +1,28 @@
 <!-- Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-  <div class="container-fluid justify-content-between">
-    <!-- Left elements -->
-    <div class="d-flex">
-      <!-- Brand -->
-      <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
-        <img
-          src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp"
-          height="20"
-          alt=""
-          loading="lazy"
-          style="margin-top: 2px;"
-        />
-      </a>
+<section class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid d-flex justify-content-around" id="menu">
+      <a class="navbar-brand col-4 d-flex justify-content-around" href="#">LeFouineur</a>
 
-      <!-- Search form -->
-      <form class="input-group w-auto my-auto d-none d-sm-flex">
-        <input
-          autocomplete="off"
-          type="search"
-          class="form-control rounded"
-          placeholder="Search"
-          style="min-width: 125px;"
-        />
-        <span class="input-group-text border-0 d-none ">
-          <i class="bi bi-search"></i>
-        </span>
-      </form>
+      <div class="collapse navbar-collapse col-8 d-flex justify-content-around ms-7" id="navbarSupportedContent">
+        <form class="d-flex">
+          <input class="form-control" id="search-input" type="search" placeholder="Rechercher" aria-label="Search"
+                 (keyup)="emit(keyword.value);" #keyword>
+        </form>
+      </div>
     </div>
-
+  </nav>
+  <hr>
+  <div class="justify-content-around row mt-4">
+    <div class="col-3">
+      <p class="nav-info"><i class="bi bi-hand-index-thumb-fill"></i>  Sélectionner un produit</p>
+    </div>
+    <div class="col-3">
+      <p class="nav-info"><i class="bi bi-hand-index-thumb-fill"></i>  Analyser le produit</p>
+    </div>
+    <div class="col-3">
+      <p class="nav-info"><i class="bi bi-hand-index-thumb-fill"></i>  Acheter le produit</p>
+    </div>
   </div>
-</nav>
+</section>
 <!-- Navbar -->

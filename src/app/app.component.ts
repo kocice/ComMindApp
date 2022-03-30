@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,6 +7,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ComMindApp';
   currentId = 1;
+  keyword = "";
+
+  send(keyword: string){
+    this.keyword = keyword;
+  }
 
   changeId(id: number) {
     this.currentId = id;

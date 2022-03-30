@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {IProduct, IRemark} from "./product-data";
-import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {map, Observable, throwError} from "rxjs";
 import { tap, catchError } from 'rxjs/operators'
 import {environment} from "../../environments/environment";
@@ -10,10 +10,11 @@ import {environment} from "../../environments/environment";
 })
 export class ProductDataService {
 
-  // private readonly PRODUCT_API_ULR = 'api/product.json';
   private readonly END_POINT_URL =  environment.baseUrl + 'api/product/';
   private currentProductId = '1';
-  // public remarks:  IRemark[] = [];
+  public productTitle: string = '';
+
+
 
   constructor(private http: HttpClient) { }
 
@@ -21,6 +22,7 @@ export class ProductDataService {
     this.currentProductId = id as unknown as string;
   }
 
+  // Obtenir l'ensemble des produits dans notre base de données
   getProductData(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(this.END_POINT_URL).pipe(
       tap(products => console.log('products', products)),
@@ -28,15 +30,16 @@ export class ProductDataService {
     );
   }
 
+  // Obtenir l'ensemble des commentaires sur un produit à partir de son ID
   getProductDetails(): Observable<IRemark[]> {
-    // return this.http.get<IRemark[]>(this.END_POINT_URL + id).pipe(
     return this.http.get<any>(this.END_POINT_URL + this.currentProductId + '/').pipe(
       map(details => details.remarks),
-      tap(details => console.log('details', details)),
+      // tap(details => console.log('details', details)),
       catchError(this.handleError)
     );
   }
 
+  // Afficher un message d'erreur en cas d'erreur à l'appel de lAPI
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -50,4 +53,5 @@ export class ProductDataService {
     // Return an observable with a user-facing error message.
     return throwError(() => new Error('Something bad happened; please try again later.'));
   }
+
 }

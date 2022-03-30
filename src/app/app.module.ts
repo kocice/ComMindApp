@@ -7,11 +7,12 @@ import { ProductInfoComponent } from './components/product-info/product-info.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from "@angular/forms";
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
-import {ProductDataService} from "./variables/product-data.service";
 import {HttpClientModule, HttpClientXsrfModule} from "@angular/common/http";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
+import { AgGridModule } from 'ag-grid-angular';
+
 
 @NgModule({
   declarations: [
@@ -28,9 +29,7 @@ import {MatButtonModule} from "@angular/material/button";
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
-    // HttpClientXsrfModule.withOptions({
-    //   cookieName: 'csrftoken'
-    // }),
+    AgGridModule.withComponents([])
   ],
   providers: [],
   bootstrap: [AppComponent]

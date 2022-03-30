@@ -1,5 +1,5 @@
-<app-navbar></app-navbar>
 <div class="container-grille">
-  <app-product (currentID)="changeId($event)"></app-product>
+  <app-navbar class="nav-bar sticky-top" (emitter)="send($event)"></app-navbar>
+  <app-product (currentID)="changeId($event)" [keyword]="keyword"></app-product>
   <app-product-info [childCurrentId]="currentId"></app-product-info>
 </div>
