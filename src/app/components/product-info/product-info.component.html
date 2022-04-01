@@ -1,29 +1,35 @@
 <aside class="sticky">
-  <div class="box">
+  <div class="aside-container">
+    <div class="box">
     {{ productDataService.productTitle }}
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <canvas id="myChart" height="250" #mychart></canvas>
     </div>
-    <div class="col-md-6">
-      <canvas id="myPie" height="250" #mypie></canvas>
+    <div class="row">
+      <div class="col-md-6">
+        <canvas id="myChart" height="320" #mychart></canvas>
+      </div>
+      <div class="col-md-6">
+        <canvas id="myPie" height="300" #mypie></canvas>
+      </div>
+    </div>
+
+    <p class="p-2 m-2">Ce produit contient <strong>{{ polarity.length }}</strong> commentaires</p>
+
+
+    <button (click)="getSelectedRows()" class="btn btn-info mb-2" style="background-color: var(--bleu-ps);">
+      Affiche le commentaire
+    </button>
+    <div class="">
+      <ag-grid-angular #agGrid
+        style="width: 100%; height: 340px;"
+        class="ag-theme-alpine"
+        rowSelection="multiple"
+        [defaultColDef]="defaultColDef"
+        [rowData]="remarks"
+        [columnDefs]="columnDefs"
+        [pagination]="true"
+      >
+      </ag-grid-angular>
     </div>
   </div>
 
-  <p>Ce produit contient {{ polarity.length }} commentaires</p>
-
-  <div class="data-table">
-    <button (click)="getSelectedRows()" class="btn btn-info mb-2" style="background-color: var(--bleu-ps);">Affiche le
-      commentaire</button>
-    <ag-grid-angular #agGrid
-      style="width: 100%; height: 300px;"
-      class="ag-theme-alpine"
-      rowSelection="multiple"
-      [rowData]="remarks"
-      [columnDefs]="columnDefs"
-      [pagination]="true"
-    >
-  </ag-grid-angular>
-  </div>
 </aside>

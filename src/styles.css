@@ -9,11 +9,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 
 
+/*:root {*/
+/*  --bg-color: #F0F2F5;*/
+/*  --icon-star: gold;*/
+/*  --bleu-ps: #3be3f6;*/
+/*  --border-color: #3a3a3a;*/
+/*  --graph-bg: #ffffff;*/
+/*}*/
+
 :root {
   --bg-color: #F0F2F5;
   --icon-star: gold;
   --bleu-ps: #3be3f6;
   --border-color: #3a3a3a;
+  --border-color2: #B4B5B9;
+  --text-color: #FFFBEB;
+  --graph-bg: #ffffff;
 }
 
 *, ::before, ::after {

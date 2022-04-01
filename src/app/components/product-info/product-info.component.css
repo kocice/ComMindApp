@@ -1,5 +1,5 @@
 .sticky {
-  background: #FFFFFF;
+  background: var(--bg-color);
   height: calc(100vh - 167px);
   width: 90%;
   position: sticky;
@@ -27,9 +27,13 @@ aside p {
   font-weight: bold;
 }
 
-.data-table {
+.aside-container {
   width: 95%;
   margin: 5px auto;
+}
+
+.graph-color {
+  background-color: var(--graph-bg);
 }
 
 .table-text {
@@ -37,4 +41,8 @@ aside p {
   max-height: calc(18px * 3);
   overflow: hidden;
   resize: vertical;
+}
+
+.data-table {
+  background-color: var(--graph-bg);
 }

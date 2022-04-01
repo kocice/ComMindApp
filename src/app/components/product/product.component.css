@@ -21,7 +21,8 @@
 .carte {
   width: 250px;
   height: auto;
-  box-shadow: 1 5px 3px var(--border-color);
+  /*box-shadow: 1 5px 3px var(--border-color);*/
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   margin: 5px;
   background-color: #FFF;
   border-radius: 10px ;
